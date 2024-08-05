@@ -124,7 +124,7 @@
       <workItem from="1722683978590" duration="1419000" />
       <workItem from="1722694097309" duration="1432000" />
       <workItem from="1722757499139" duration="10431000" />
-      <workItem from="1722821170029" duration="2513000" />
+      <workItem from="1722821170029" duration="2982000" />
     </task>
     <task id="LOCAL-00001" summary="基于Vert.x的高性能RPC框架">
       <option name="closed" value="true" />
@@ -134,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722823659925</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="基于Vert.x的高性能RPC框架">
+      <option name="closed" value="true" />
+      <created>1722823971805</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722823971805</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
