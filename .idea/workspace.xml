@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="" />
+    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="基于Vert.x的高性能RPC框架" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +17,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -35,6 +38,7 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2k8xlPtgyRh29TgrLebcy5OwBCt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,6 +49,7 @@
     "Application.EasyProvider.executor": "Debug",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/xuzhichao/IdeaProjects/samoyer-rpc/consumer/src/main/java",
     "node.js.detected.package.eslint": "true",
@@ -119,12 +124,36 @@
       <workItem from="1722683978590" duration="1419000" />
       <workItem from="1722694097309" duration="1432000" />
       <workItem from="1722757499139" duration="10431000" />
-      <workItem from="1722821170029" duration="2074000" />
+      <workItem from="1722821170029" duration="2513000" />
     </task>
+    <task id="LOCAL-00001" summary="基于Vert.x的高性能RPC框架">
+      <option name="closed" value="true" />
+      <created>1722823659925</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722823659925</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="基于Vert.x的高性能RPC框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="基于Vert.x的高性能RPC框架" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
