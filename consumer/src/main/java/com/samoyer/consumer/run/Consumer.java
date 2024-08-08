@@ -5,24 +5,26 @@ import com.samoyer.common.service.UserService;
 import com.samoyer.rpc.proxy.ServiceProxyFactory;
 
 /**
- * 简易的服务消费者
- * 目标：通过RPC框架，得到一个可以调用provider的代理对象
- * 像调用本地方法一样调用UserService的方法
+ * 服务消费者
  */
-public class EasyConsumer {
+public class Consumer{
     public static void main(String[] args) {
+//        RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, RpcConstant.DEFAULT_CONFIG_PREFIX); //普通加载配置
+//        RpcConfig rpcConfig = RpcApplication.getRpcConfig(); //全局配置对象
+//        System.out.println(rpcConfig);
+
         User user=new User();
         user.setName("samoyer");
 
-        //调用
-//        UserService userService=new UserServiceProxy();//使用静态代理
         UserService userService= ServiceProxyFactory.getProxy(UserService.class);
-        User newUser=userService.getUserInfo(user);
+        User newUser = userService.getUserInfo(user);
         if (newUser!=null){
             System.out.println("newUser:"+newUser.getName());
         }else {
             System.out.println("newUser = null");
         }
 
+        short number = userService.getNumber();
+        System.out.println(number);
     }
 }

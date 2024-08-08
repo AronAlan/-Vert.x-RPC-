@@ -1,8 +1,10 @@
-package com.samoyer.consumer.proxy;
+package com.samoyer.rpc.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import com.samoyer.common.domain.po.User;
+import com.samoyer.common.model.po.User;
+import com.samoyer.rpc.RpcApplication;
+import com.samoyer.rpc.config.RpcConfig;
 import com.samoyer.rpc.model.RpcRequest;
 import com.samoyer.rpc.model.RpcResponse;
 import com.samoyer.rpc.serializer.JdkSerializer;
@@ -18,11 +20,12 @@ import java.lang.reflect.Method;
 public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        //利用SPI(service provider interface)机制，实现模块化开发和插件化扩展
         //指定序列化器
         Serializer serializer = new JdkSerializer();
 
         //构建请求
-        RpcRequest request=RpcRequest.builder()
+        RpcRequest request = RpcRequest.builder()
                 .serviceName(method.getDeclaringClass().getName())
                 .methodName(method.getName())
                 .parameterTypes(method.getParameterTypes())
@@ -33,20 +36,25 @@ public class ServiceProxy implements InvocationHandler {
             byte[] bodyBytes = serializer.serialize(request);
             byte[] result;
             //发送请求
-            //TODO 地址硬编码改为使用注册中心
-            try(HttpResponse response = HttpRequest.post("http://localhost:8080")
+            //动态获取配置文件中的主机名和端口号
+            RpcConfig uriConfig = RpcApplication.getRpcConfig();
+            try (HttpResponse response = HttpRequest.post("http://" +
+                                                                    uriConfig.getServerHost() +
+                                                                    ":" +
+                                                                    uriConfig.getServerPort())
                     .body(bodyBytes)
-                    .execute()){
+                    .execute()) {
                 //获取响应结果(字节结果)
-                result=response.bodyBytes();
+                result = response.bodyBytes();
             }
             //反序列化响应结果
             RpcResponse rpcResponse = serializer.deserialize(result, RpcResponse.class);
 
-            return (User) rpcResponse.getData();
-        }catch (IOException e){
+            return rpcResponse.getData();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return null;    }
+        return null;
+    }
 }

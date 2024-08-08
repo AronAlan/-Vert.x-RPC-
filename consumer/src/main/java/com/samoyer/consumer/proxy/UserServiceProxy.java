@@ -2,7 +2,7 @@ package com.samoyer.consumer.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import com.samoyer.common.domain.po.User;
+import com.samoyer.common.model.po.User;
 import com.samoyer.common.service.UserService;
 import com.samoyer.rpc.model.RpcRequest;
 import com.samoyer.rpc.model.RpcResponse;

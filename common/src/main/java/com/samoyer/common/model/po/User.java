@@ -1,4 +1,4 @@
-package com.samoyer.common.domain.po;
+package com.samoyer.common.model.po;
 
 import lombok.Data;
 

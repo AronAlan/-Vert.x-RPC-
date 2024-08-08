@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>provider</artifactId>
+    <artifactId>samoyer-rpc-core</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,11 +18,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.xzc</groupId>
-            <artifactId>samoyer-rpc-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>com.xzc</groupId>
             <artifactId>common</artifactId>
@@ -34,6 +29,25 @@
             <artifactId>vertx-core</artifactId>
             <version>4.5.8</version>
         </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver-dns-native-macos</artifactId>
+            <version>4.1.101.Final</version>
+            <classifier>osx-aarch_64</classifier>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <!--        序列化-->
+        
     </dependencies>
 
 </project>

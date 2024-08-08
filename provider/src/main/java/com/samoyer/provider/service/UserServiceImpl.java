@@ -1,6 +1,6 @@
 package com.samoyer.provider.service;
 
-import com.samoyer.common.domain.po.User;
+import com.samoyer.common.model.po.User;
 import com.samoyer.common.service.UserService;
 
 /**

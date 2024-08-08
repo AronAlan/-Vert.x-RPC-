@@ -4,7 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="基于Vert.x的高性能RPC框架" />
+    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="基于Vert.x的高性能RPC框架">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/run/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provider/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/RpcApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/config/RpcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/constant/RpcConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/model/RpcRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/model/RpcResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/proxy/MockServiceProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/LocalRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/serializer/JdkSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/serializer/Serializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/HttpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/HttpServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/VertxHttpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/utils/ConfigUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/model/RpcRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/model/RpcResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/registry/LocalRegistry.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/serializer/JdkSerializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/serializer/Serializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/server/HttpServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/server/HttpServerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/server/VertxHttpServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/samoyer/common/domain/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/samoyer/common/model/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/samoyer/common/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/samoyer/common/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/samoyer/common/domain/po/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/samoyer/common/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/samoyer/common/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/proxy/ServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/proxy/ServiceProxyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/proxy/ServiceProxyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/proxy/UserServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/proxy/UserServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/run/EasyConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/run/EasyConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/proxy/ServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/proxy/ServiceProxyFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/proxy/UserServiceProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/proxy/UserServiceProxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/run/EasyConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/run/EasyConsumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/samoyer/provider/run/EasyProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/samoyer/provider/run/Provider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/samoyer/provider/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/samoyer/provider/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/target/classes/com/samoyer/provider/run/EasyProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/target/classes/com/samoyer/provider/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/provider/target/classes/com/samoyer/provider/service/UserServiceImpl.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +66,13 @@
         <option value="Interface" />
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
     </option>
   </component>
   <component name="Git.Settings">
@@ -33,6 +90,7 @@
   </component>
   <component name="MavenRunner">
     <option name="jreName" value="17" />
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -43,33 +101,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.EasyConsumer.executor": "Debug",
-    "Application.EasyProvider.executor": "Debug",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/xuzhichao/IdeaProjects/samoyer-rpc/consumer/src/main/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Consumer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EasyConsumer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EasyProvider.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.samoyer-rpc-core [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/xuzhichao/IdeaProjects/samoyer-rpc/samoyer-rpc-core/src/main/java/com/samoyer/rpc&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc" />
+      <recent name="$PROJECT_DIR$/provider/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/consumer/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyConsumer">
+  <component name="RunManager" selected="Application.Consumer">
+    <configuration name="Consumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.samoyer.consumer.run.Consumer" />
+      <module name="consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.samoyer.consumer.run.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EasyConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.samoyer.consumer.run.EasyConsumer" />
       <module name="consumer" />
@@ -83,8 +160,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EasyProvider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.samoyer.provider.run.EasyProvider" />
+    <configuration name="Provider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.samoyer.provider.run.Provider" />
       <module name="provider" />
       <extension name="coverage">
         <pattern>
@@ -98,8 +175,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Consumer" />
         <item itemvalue="Application.EasyConsumer" />
-        <item itemvalue="Application.EasyProvider" />
       </list>
     </recent_temporary>
   </component>
@@ -124,7 +201,15 @@
       <workItem from="1722683978590" duration="1419000" />
       <workItem from="1722694097309" duration="1432000" />
       <workItem from="1722757499139" duration="10431000" />
-      <workItem from="1722821170029" duration="2982000" />
+      <workItem from="1722821170029" duration="3166000" />
+      <workItem from="1723042218317" duration="2717000" />
+      <workItem from="1723044948117" duration="44000" />
+      <workItem from="1723044997463" duration="519000" />
+      <workItem from="1723045706186" duration="14000" />
+      <workItem from="1723045737033" duration="107000" />
+      <workItem from="1723109244394" duration="8305000" />
+      <workItem from="1723127491068" duration="547000" />
+      <workItem from="1723128046304" duration="227000" />
     </task>
     <task id="LOCAL-00001" summary="基于Vert.x的高性能RPC框架">
       <option name="closed" value="true" />
@@ -142,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722823971805</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="基于Vert.x的高性能RPC框架">
+      <option name="closed" value="true" />
+      <created>1722824344381</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722824344381</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
