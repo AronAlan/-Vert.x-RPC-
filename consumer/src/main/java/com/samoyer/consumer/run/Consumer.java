@@ -6,6 +6,8 @@ import com.samoyer.rpc.proxy.ServiceProxyFactory;
 
 /**
  * 服务消费者
+ *
+ * @author Samoyer
  */
 public class Consumer{
     public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class Consumer{
             System.out.println("newUser = null");
         }
 
-        short number = userService.getNumber();
-        System.out.println(number);
+//        Integer number = userService.getNumber();
+//        System.out.println("number="+number);
     }
 }

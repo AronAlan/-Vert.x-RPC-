@@ -1,10 +1,12 @@
 package com.samoyer.rpc.server;
 
+import com.samoyer.rpc.RpcApplication;
 import com.samoyer.rpc.model.RpcRequest;
 import com.samoyer.rpc.model.RpcResponse;
 import com.samoyer.rpc.registry.LocalRegistry;
 import com.samoyer.rpc.serializer.JdkSerializer;
 import com.samoyer.rpc.serializer.Serializer;
+import com.samoyer.rpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -16,6 +18,7 @@ import java.lang.reflect.Method;
 /**
  * HTTP请求处理
  * Vert.x通过实现Handler<HttpServerRequest>接口来自定义请求处理器
+ * @author Samoyer
  */
 public class HttpServerHandler implements Handler<HttpServerRequest> {
     /**
@@ -26,7 +29,10 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
         //指定序列化器
-        final Serializer serializer = new JdkSerializer();
+        /*final Serializer serializer = new JdkSerializer();*/
+        //动态获取序列化器：读取配置，使用工厂获取序列化器的实例
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
+        System.out.println("序列化器:"+serializer);
 
         System.out.println("接收到request method:" + request.method() +
                 " uri: " + request.uri());

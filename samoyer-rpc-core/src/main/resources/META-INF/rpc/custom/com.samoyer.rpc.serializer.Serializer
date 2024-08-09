@@ -1,0 +1,2 @@
+json=com.samoyer.rpc.serializer.JsonSerializer
+kryo=com.samoyer.rpc.serializer.KryoSerializer

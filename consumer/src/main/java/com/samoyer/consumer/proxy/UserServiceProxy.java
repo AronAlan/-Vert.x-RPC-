@@ -13,6 +13,8 @@ import java.io.IOException;
 
 /**
  * 服务代理（静态代理）
+ *
+ * @author Samoyer
  */
 public class UserServiceProxy implements UserService {
     @Override

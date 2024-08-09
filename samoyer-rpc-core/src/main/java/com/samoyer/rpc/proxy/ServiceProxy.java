@@ -9,6 +9,8 @@ import com.samoyer.rpc.model.RpcRequest;
 import com.samoyer.rpc.model.RpcResponse;
 import com.samoyer.rpc.serializer.JdkSerializer;
 import com.samoyer.rpc.serializer.Serializer;
+import com.samoyer.rpc.serializer.SerializerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -16,13 +18,20 @@ import java.lang.reflect.Method;
 
 /**
  * 服务代理（JDK动态代理）
+ *
+ * @author Samoyer
  */
+@Slf4j
 public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        //利用SPI(service provider interface)机制，实现模块化开发和插件化扩展
+        log.info("Service执行invoke方法:{}",method.getName());
         //指定序列化器
-        Serializer serializer = new JdkSerializer();
+        /*Serializer serializer = new JdkSerializer();*/
+        //利用SPI(service provider interface)机制，实现模块化开发和插件化扩展
+        //动态获取序列化器：读取配置，使用工厂获取序列化器的实例
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
+        System.out.println("序列化器:"+serializer);
 
         //构建请求
         RpcRequest request = RpcRequest.builder()

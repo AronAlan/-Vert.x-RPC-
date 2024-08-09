@@ -9,6 +9,8 @@ import com.samoyer.rpc.server.VertxHttpServer;
 
 /**
  * 简单的服务提供者
+ *
+ * @author Samoyer
  */
 public class Provider {
     public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class Provider {
 
         //启动web服务
         HttpServer httpServer=new VertxHttpServer();
-//        httpServer.doStart(8080);
+        //httpServer.doStart(8080);
         httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
     }
 }
