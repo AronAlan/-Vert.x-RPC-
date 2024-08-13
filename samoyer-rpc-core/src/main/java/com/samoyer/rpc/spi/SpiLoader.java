@@ -136,11 +136,12 @@ public class SpiLoader {
                             String className=strArray[1];
                             // 将键值对存入映射表
                             keyClassMap.put(key,Class.forName(className));
+                            log.info("spi资源加载成功:{}",Class.forName(className));
                         }
                     }
                 }catch (Exception e){
                     // 记录资源加载错误
-                    log.error("spi resource load error",e);
+                    log.error("spi 资源加载错误",e);
                 }
             }
         }

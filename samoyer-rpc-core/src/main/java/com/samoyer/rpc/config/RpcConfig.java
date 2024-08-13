@@ -40,4 +40,9 @@ public class RpcConfig {
      * 默认使用JDK
      */
     private String serializer= SerializerKeys.JDK;
+
+    /**
+     * 注册中心配置
+     */
+    private RegistryConfig registryConfig=new RegistryConfig();
 }

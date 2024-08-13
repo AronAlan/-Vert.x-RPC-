@@ -1,7 +1,10 @@
 package com.samoyer.rpc;
 
+import com.samoyer.rpc.config.RegistryConfig;
 import com.samoyer.rpc.config.RpcConfig;
 import com.samoyer.rpc.constant.RpcConstant;
+import com.samoyer.rpc.registry.Registry;
+import com.samoyer.rpc.registry.RegistryFactory;
 import com.samoyer.rpc.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,6 +15,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class RpcApplication {
+    /**
+     * volatile 不同线程都能共享
+     */
     private static volatile RpcConfig rpcConfig;
 
     /**
@@ -20,7 +26,19 @@ public class RpcApplication {
      */
     public static void init(RpcConfig newRpcConfig){
         rpcConfig=newRpcConfig;
-        log.info("RPC init, config={}",newRpcConfig.toString());
+        log.info("RPC初始化, config={}",newRpcConfig.toString());
+
+        //注册中心初始化
+        //获取注册中心配置
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        //获取注册中心实例对象
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+        registry.init(registryConfig);
+        log.info("registry init, config={}",registryConfig);
+
+        //创建并注册Shutdown Hook , JVM退出时执行操作
+        //Shutdown Hook是JVM提供的一种机制，允许开发者在JVM在即将关闭之前执行一些清理工作，比如释放资源，关闭数据库连接等
+        Runtime.getRuntime().addShutdownHook(new Thread(registry::destroy));
     }
 
     /**
@@ -29,6 +47,7 @@ public class RpcApplication {
     public static void init(){
         RpcConfig newRpcConfig;
         try {
+            //从application.properties读取RpcConfig相关的属性
             newRpcConfig= ConfigUtils.loadConfig(RpcConfig.class, RpcConstant.DEFAULT_CONFIG_PREFIX);
         } catch (Exception e) {
             //配置加载失败，使用默认值

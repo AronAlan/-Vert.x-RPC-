@@ -1,11 +1,14 @@
 package com.samoyer.rpc.registry;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 本地服务注册器
  */
+@Slf4j
 public class LocalRegistry {
     /**
      * 注册信息存储
@@ -19,7 +22,7 @@ public class LocalRegistry {
      */
     public static void register(String serviceName,Class<?> implClass){
         map.put(serviceName,implClass);
-        System.out.println("本地注册服务名："+serviceName+" 实现类："+implClass.getName());
+        log.info("本地注册服务名：{}\t实现类：{}",serviceName,implClass.getName());
     }
 
     /**

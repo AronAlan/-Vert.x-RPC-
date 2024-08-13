@@ -11,6 +11,7 @@ import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.http.HttpServerResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -20,6 +21,7 @@ import java.lang.reflect.Method;
  * Vert.x通过实现Handler<HttpServerRequest>接口来自定义请求处理器
  * @author Samoyer
  */
+@Slf4j
 public class HttpServerHandler implements Handler<HttpServerRequest> {
     /**
      * 处理HTTP请求
@@ -32,7 +34,7 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
         /*final Serializer serializer = new JdkSerializer();*/
         //动态获取序列化器：读取配置，使用工厂获取序列化器的实例
         final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
-        System.out.println("序列化器:"+serializer);
+        log.info("加载到序列化器:{}",serializer);
 
         System.out.println("接收到request method:" + request.method() +
                 " uri: " + request.uri());
