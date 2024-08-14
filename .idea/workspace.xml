@@ -7,42 +7,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="添加序列化器，动态加载配置，利用SPI机制，加载自定义的序列化器实现类">
-      <change afterPath="$PROJECT_DIR$/consumer/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/config/RegistryConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/model/ServiceMetaInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/EtcdRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/Registry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/RegistryFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/RegistryKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/RegistryServiceCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/test/RegistryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/resources/META-INF/rpc/system/com.samoyer.rpc.registry.Registry" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024_8_5,_10_18_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024_8_5__10_18__Changes_.xml" beforeDir="false" />
+    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="添加基于Etcd的注册中心，实现服务注册、发现、心跳检测、缓存等功能">
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageSerializerEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/TcpServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/VertxTcpClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/VertxTcpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/test/java/com/samoyer/rpc/protocol/ProtocolMessageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/run/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/samoyer/consumer/run/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/run/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/samoyer/consumer/run/Consumer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/samoyer/provider/run/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/samoyer/provider/run/Provider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/provider/target/classes/com/samoyer/provider/run/Provider.class" beforeDir="false" afterPath="$PROJECT_DIR$/provider/target/classes/com/samoyer/provider/run/Provider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/target/classes/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/RpcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/RpcApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/config/RpcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/config/RpcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/constant/RpcConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/constant/RpcConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/model/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/model/RpcRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/proxy/ServiceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/LocalRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/LocalRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/registry/test/RegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/test/java/com/samoyer/rpc/registry/RegistryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/HttpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/HttpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/spi/SpiLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/spi/SpiLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/RpcApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/RpcApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/config/RpcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/config/RpcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/constant/RpcConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/constant/RpcConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/model/RpcRequest$RpcRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/model/RpcRequest$RpcRequestBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/model/RpcRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/model/RpcRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/proxy/ServiceProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/proxy/ServiceProxy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/registry/LocalRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/registry/LocalRegistry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/server/HttpServerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/target/classes/com/samoyer/rpc/server/HttpServerHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -104,36 +90,38 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Consumer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EasyConsumer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EasyProvider.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EtcdRegistry.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Provider.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RegistryTest.heartBeat.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RegistryTest.register.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RegistryTest.serviceDiscovery.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RegistryTest.unRegister.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.samoyer-rpc-core [clean].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/xuzhichao/IdeaProjects/samoyer-rpc/consumer/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Consumer.executor": "Run",
+    "Application.EasyConsumer.executor": "Run",
+    "Application.EasyProvider.executor": "Run",
+    "Application.EtcdRegistry.executor": "Run",
+    "Application.Provider.executor": "Run",
+    "Application.VertxTcpClient.executor": "Run",
+    "Application.VertxTcpServer.executor": "Run",
+    "JUnit.ProtocolMessageTest.testEncodeAndDecode.executor": "Run",
+    "JUnit.RegistryTest.heartBeat.executor": "Run",
+    "JUnit.RegistryTest.register.executor": "Run",
+    "JUnit.RegistryTest.serviceDiscovery.executor": "Run",
+    "JUnit.RegistryTest.unRegister.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.samoyer-rpc-core [clean].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/xuzhichao/IdeaProjects/samoyer-rpc/consumer/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/consumer/src/main/resources" />
@@ -149,8 +137,14 @@
       <recent name="$PROJECT_DIR$/consumer/src/main/resources/rpc" />
       <recent name="$PROJECT_DIR$/consumer/src/main/resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.samoyer.rpc.registry" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.samoyer.rpc.protocol" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Consumer">
+  <component name="RunManager" selected="Application.Provider">
     <configuration name="Consumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.samoyer.consumer.run.Consumer" />
       <module name="consumer" />
@@ -177,49 +171,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryTest.heartBeat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VertxTcpClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.samoyer.rpc.server.tcp.VertxTcpClient" />
       <module name="samoyer-rpc-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.samoyer.rpc.registry.test.*" />
+          <option name="PATTERN" value="com.samoyer.rpc.server.tcp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.samoyer.rpc.registry.test" />
-      <option name="MAIN_CLASS_NAME" value="com.samoyer.rpc.registry.test.RegistryTest" />
-      <option name="METHOD_NAME" value="heartBeat" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryTest.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VertxTcpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.samoyer.rpc.server.tcp.VertxTcpServer" />
       <module name="samoyer-rpc-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.samoyer.rpc.registry.test.*" />
+          <option name="PATTERN" value="com.samoyer.rpc.server.tcp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.samoyer.rpc.registry.test" />
-      <option name="MAIN_CLASS_NAME" value="com.samoyer.rpc.registry.test.RegistryTest" />
-      <option name="METHOD_NAME" value="register" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryTest.serviceDiscovery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProtocolMessageTest.testEncodeAndDecode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="samoyer-rpc-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.samoyer.rpc.registry.test.*" />
+          <option name="PATTERN" value="com.samoyer.rpc.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.samoyer.rpc.registry.test" />
-      <option name="MAIN_CLASS_NAME" value="com.samoyer.rpc.registry.test.RegistryTest" />
-      <option name="METHOD_NAME" value="serviceDiscovery" />
+      <option name="PACKAGE_NAME" value="com.samoyer.rpc.protocol" />
+      <option name="MAIN_CLASS_NAME" value="com.samoyer.rpc.protocol.ProtocolMessageTest" />
+      <option name="METHOD_NAME" value="testEncodeAndDecode" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -229,9 +217,9 @@
       <list>
         <item itemvalue="Application.Consumer" />
         <item itemvalue="Application.Provider" />
-        <item itemvalue="JUnit.RegistryTest.heartBeat" />
-        <item itemvalue="JUnit.RegistryTest.register" />
-        <item itemvalue="JUnit.RegistryTest.serviceDiscovery" />
+        <item itemvalue="JUnit.ProtocolMessageTest.testEncodeAndDecode" />
+        <item itemvalue="Application.VertxTcpClient" />
+        <item itemvalue="Application.VertxTcpServer" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +278,10 @@
       <workItem from="1723550213567" duration="120000" />
       <workItem from="1723550341180" duration="6195000" />
       <workItem from="1723559659179" duration="111000" />
-      <workItem from="1723559780154" duration="1362000" />
+      <workItem from="1723559780154" duration="2971000" />
+      <workItem from="1723566934370" duration="308000" />
+      <workItem from="1723617398514" duration="1825000" />
+      <workItem from="1723620982476" duration="15203000" />
     </task>
     <task id="LOCAL-00001" summary="基于Vert.x的高性能RPC框架">
       <option name="closed" value="true" />
@@ -340,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723196997623</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加基于Etcd的注册中心，实现服务注册、发现、心跳检测、缓存等功能">
+      <option name="closed" value="true" />
+      <created>1723561382446</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723561382446</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +360,8 @@
     <MESSAGE value="基于Vert.x的高性能RPC框架" />
     <MESSAGE value="添加全局配置加载；接口Mock" />
     <MESSAGE value="添加序列化器，动态加载配置，利用SPI机制，加载自定义的序列化器实现类" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加序列化器，动态加载配置，利用SPI机制，加载自定义的序列化器实现类" />
+    <MESSAGE value="添加基于Etcd的注册中心，实现服务注册、发现、心跳检测、缓存等功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加基于Etcd的注册中心，实现服务注册、发现、心跳检测、缓存等功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

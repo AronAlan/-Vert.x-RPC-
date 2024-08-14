@@ -1,9 +1,7 @@
-package com.samoyer.rpc.registry.test;
+package com.samoyer.rpc.registry;
 
 import com.samoyer.rpc.config.RegistryConfig;
 import com.samoyer.rpc.model.ServiceMetaInfo;
-import com.samoyer.rpc.registry.EtcdRegistry;
-import com.samoyer.rpc.registry.Registry;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

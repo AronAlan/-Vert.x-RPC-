@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 
 /**
  * HTTP请求处理
- * Vert.x通过实现Handler<HttpServerRequest>接口来自定义请求处理器
+ * Vert.x通过实现Handler<HttpServerRequest>接口来自定义HTTP请求处理器
  * @author Samoyer
  */
 @Slf4j

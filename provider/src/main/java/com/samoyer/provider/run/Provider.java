@@ -11,6 +11,7 @@ import com.samoyer.rpc.registry.Registry;
 import com.samoyer.rpc.registry.RegistryFactory;
 import com.samoyer.rpc.server.HttpServer;
 import com.samoyer.rpc.server.VertxHttpServer;
+import com.samoyer.rpc.server.tcp.VertxTcpServer;
 
 /**
  * 简单的服务提供者
@@ -45,9 +46,12 @@ public class Provider {
             throw new RuntimeException(serviceName+"注册服务失败",e);
         }
 
+        //启动HTTP服务
+//        HttpServer httpServer=new VertxHttpServer();
+//        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
 
-        //启动web服务
-        HttpServer httpServer=new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        //启动TCP服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8080);
     }
 }
