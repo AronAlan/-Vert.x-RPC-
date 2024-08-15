@@ -15,6 +15,7 @@ public class ProtocolMessageEncoder {
 
     /**
      * 编码
+     * 包括对消息的序列化
      * 传进ProtocolMessage，编码成Buffer
      * @param protocolMessage
      * @return

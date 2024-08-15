@@ -39,7 +39,7 @@ public class ProtocolMessageDecoder {
         header.setRequestId(buffer.getLong(5));
         //long占8个字节，bodyLength从13开始读
         header.setBodyLength(buffer.getInt(13));
-        //读取数据。解决粘包问题，只读指定长度的数据(bodyLength)
+        //读取数据。解决粘包半包问题，只读指定长度的数据(bodyLength)
         byte[] bodyBytes = buffer.getBytes(17, 17 + header.getBodyLength());
 
         //解析消息体

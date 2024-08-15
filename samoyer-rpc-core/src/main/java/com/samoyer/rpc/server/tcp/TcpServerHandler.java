@@ -27,12 +27,12 @@ public class TcpServerHandler implements Handler<NetSocket> {
     /**
      * 处理TCP请求
      *
-     * @param netSocket
+     * @param socket
      */
     @Override
-    public void handle(NetSocket netSocket) {
+    public void handle(NetSocket socket) {
         //处理连接
-        netSocket.handler(buffer -> {
+        TcpBufferHandlerWrapper bufferHandlerWrapper=new TcpBufferHandlerWrapper(buffer -> {
             //接收请求，解码
             ProtocolMessage<RpcRequest> protocolMessage;
             try {
@@ -42,7 +42,7 @@ public class TcpServerHandler implements Handler<NetSocket> {
             }
             //获取消息体(请求数据)
             RpcRequest rpcRequest = protocolMessage.getBody();
-            System.out.println("接收到请求消息: { 服务名称 :" + rpcRequest.getMethodName() +
+            System.out.println("接收到请求消息: { 服务名称 :" + rpcRequest.getServiceName() +
                     " 方法名称 : " + rpcRequest.getMethodName() + "}");
 
             //处理请求
@@ -76,10 +76,12 @@ public class TcpServerHandler implements Handler<NetSocket> {
                 //编码
                 Buffer encodeBuffer = ProtocolMessageEncoder.encode(rpcResponseProtocolMessage);
                 //发送响应
-                netSocket.write(encodeBuffer);
+                socket.write(encodeBuffer);
             } catch (IOException e) {
                 throw new RuntimeException("服务端-协议消息编码错误",e);
             }
         });
+
+        socket.handler(bufferHandlerWrapper);
     }
 }

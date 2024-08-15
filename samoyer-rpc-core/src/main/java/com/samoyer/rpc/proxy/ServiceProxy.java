@@ -13,6 +13,7 @@ import com.samoyer.rpc.registry.Registry;
 import com.samoyer.rpc.registry.RegistryFactory;
 import com.samoyer.rpc.serializer.Serializer;
 import com.samoyer.rpc.serializer.SerializerFactory;
+import com.samoyer.rpc.server.tcp.VertxTcpClient;
 import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetClient;
@@ -53,9 +54,6 @@ public class ServiceProxy implements InvocationHandler {
                 .build();
 
         try {
-            //先对请求数据序列化
-            byte[] bodyBytes = serializer.serialize(rpcRequest);
-
             // 从注册中心获取服务提供者的地址（如果已存在，则从缓存中直接读取）
             // 获取配置信息
             RpcConfig rpcConfig = RpcApplication.getRpcConfig();
@@ -80,82 +78,12 @@ public class ServiceProxy implements InvocationHandler {
             // 选择第一个服务节点
             ServiceMetaInfo selectedServiceMetaInfo = serviceMetaInfoList.get(0);
 
-            //基于TCP发送请求
-            Vertx vertx = Vertx.vertx();
-            NetClient netClient = vertx.createNetClient();
-            //Vert.x提供的请求处理器是异步的，为了方便获取结果，使用CompletableFuture转为同步
-            CompletableFuture<RpcResponse> responseFuture = new CompletableFuture<>();
-            netClient.connect(selectedServiceMetaInfo.getServicePort(),
-                    selectedServiceMetaInfo.getServiceHost(),
-                    result -> {
-                        if (result.succeeded()) {
-                            log.info("连接到TCP服务器");
-                            NetSocket socket = result.result();
-                            //发送数据
-                            //构造消息
-                            ProtocolMessage<RpcRequest> protocolMessage = new ProtocolMessage<>();
-                            ProtocolMessage.Header header = new ProtocolMessage.Header();
-                            header.setMagic(ProtocolConstant.PROTOCOL_MAGIC);
-                            header.setVersion(ProtocolConstant.PROTOCOL_VERSION);
-                            header.setSerializer((byte) Objects.requireNonNull(
-                                            ProtocolMessageSerializerEnum.getEnumByValue(
-                                                    RpcApplication.getRpcConfig().getSerializer()
-                                            )
-                                    ).getKey()
-                            );
-                            header.setType((byte) ProtocolMessageTypeEnum.REQUEST.getKey());
-                            header.setRequestId(IdUtil.getSnowflakeNextId());
-                            protocolMessage.setHeader(header);
-                            protocolMessage.setBody(rpcRequest);
-
-                            //编码
-                            try {
-                                log.info("编码请求消息中...");
-                                Buffer encodeBuffer = ProtocolMessageEncoder.encode(protocolMessage);
-                                socket.write(encodeBuffer);
-                                log.info("***请求消息发送成功***");
-                            } catch (IOException e) {
-                                throw new RuntimeException("消费端-协议消息编码错误");
-                            }
-
-                            //接收响应
-                            socket.handler(buffer -> {
-                                try {
-                                    ProtocolMessage<RpcResponse> rpcResponseProtocolMessage = (ProtocolMessage<RpcResponse>) ProtocolMessageDecoder.decode(buffer);
-                                    //完成响应
-                                    responseFuture.complete(rpcResponseProtocolMessage.getBody());
-                                } catch (IOException e) {
-                                    throw new RuntimeException("消费端-协议消息解码错误");
-                                }
-                            });
-                        }else {
-                            log.error("连接到TCP服务器失败");
-                        }
-                    }
-            );
-
-            //阻塞，等到响应完成，才继续执行
-            RpcResponse rpcResponse = responseFuture.get();
-            //关闭连接
-            netClient.close();
-
-            /* 基于HTTP发送请求
-                byte[] result;
-                //发送请求
-                try (HttpResponse response = HttpRequest.post(selectedServiceMetaInfo.getServiceAddress())
-                        .body(bodyBytes)
-                        .execute()) {
-                    //获取响应结果(字节结果)
-                    result = response.bodyBytes();
-                }
-                //反序列化响应结果
-                RpcResponse rpcResponse = serializer.deserialize(result, RpcResponse.class);
-             */
-
+            //发送TCP请求（发送请求的操作封装在VertxTcpClient.doRequest）
+            RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo);
 
             return rpcResponse.getData();
-        } catch (IOException e) {
-            log.error("消费端向服务端发送消息失败");
+        } catch (Exception e) {
+            log.error("调用失败");
         }
 
         return null;

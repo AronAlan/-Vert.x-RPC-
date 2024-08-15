@@ -25,7 +25,7 @@ public class ProtocolMessage<T> {
     private T body;
 
     /**
-     * 协议消息头
+     * 协议消息头。长度为17
      */
     @Data
     public static class Header {

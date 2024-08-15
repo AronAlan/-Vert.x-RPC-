@@ -1,9 +1,11 @@
 package com.samoyer.rpc.server.tcp;
 
 import com.samoyer.rpc.server.HttpServer;
+import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetServer;
+import io.vertx.core.parsetools.RecordParser;
 
 /**
  * TCP服务端
@@ -39,5 +41,9 @@ public class VertxTcpServer implements HttpServer {
                 System.out.println("Failed to start TCP server: " + result.cause());
             }
         });
+    }
+
+    public static void main(String[] args) {
+        new VertxTcpServer().doStart(8888);
     }
 }
