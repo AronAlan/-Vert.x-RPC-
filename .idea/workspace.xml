@@ -7,17 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="添加自定义协议，基于TCP的协议；修改HTTP服务器为TCP服务器；自定义请求响应结构；使用更少的空间传递消息">
-      <change afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/TcpBufferHandlerWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="29b5da67-e0ef-4b4c-af8c-f7551873b403" name="Changes" comment="解决使用自定义基于TCP的协议后带来的粘包半包问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/protocol/ProtocolMessageEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/proxy/ServiceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/TcpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/TcpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/VertxTcpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/VertxTcpClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/VertxTcpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/samoyer-rpc-core/src/main/java/com/samoyer/rpc/server/tcp/VertxTcpServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +252,7 @@
       <workItem from="1723703208398" duration="5540000" />
       <workItem from="1723708792297" duration="390000" />
       <workItem from="1723709192204" duration="56000" />
-      <workItem from="1723709256398" duration="9474000" />
+      <workItem from="1723709256398" duration="9878000" />
     </task>
     <task id="LOCAL-00001" summary="基于Vert.x的高性能RPC框架">
       <option name="closed" value="true" />
@@ -327,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723648774099</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="解决使用自定义基于TCP的协议后带来的粘包半包问题">
+      <option name="closed" value="true" />
+      <created>1723720085178</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723720085178</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +349,8 @@
     <MESSAGE value="添加序列化器，动态加载配置，利用SPI机制，加载自定义的序列化器实现类" />
     <MESSAGE value="添加基于Etcd的注册中心，实现服务注册、发现、心跳检测、缓存等功能" />
     <MESSAGE value="添加自定义协议，基于TCP的协议；修改HTTP服务器为TCP服务器；自定义请求响应结构；使用更少的空间传递消息" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加自定义协议，基于TCP的协议；修改HTTP服务器为TCP服务器；自定义请求响应结构；使用更少的空间传递消息" />
+    <MESSAGE value="解决使用自定义基于TCP的协议后带来的粘包半包问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决使用自定义基于TCP的协议后带来的粘包半包问题" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

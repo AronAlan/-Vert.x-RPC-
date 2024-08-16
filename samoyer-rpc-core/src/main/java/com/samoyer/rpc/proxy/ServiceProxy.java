@@ -5,6 +5,7 @@ import cn.hutool.core.util.IdUtil;
 import com.samoyer.rpc.RpcApplication;
 import com.samoyer.rpc.config.RpcConfig;
 import com.samoyer.rpc.constant.RpcConstant;
+import com.samoyer.rpc.loadbalancer.RandomLoadBalancer;
 import com.samoyer.rpc.model.RpcRequest;
 import com.samoyer.rpc.model.RpcResponse;
 import com.samoyer.rpc.model.ServiceMetaInfo;
@@ -34,6 +35,8 @@ import java.util.concurrent.CompletableFuture;
  */
 @Slf4j
 public class ServiceProxy implements InvocationHandler {
+    private RandomLoadBalancer randomLoadBalancer;
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         log.info("Service执行invoke方法:{}", method.getName());
@@ -75,8 +78,10 @@ public class ServiceProxy implements InvocationHandler {
             if (CollUtil.isEmpty(serviceMetaInfoList)) {
                 throw new RuntimeException("暂无服务地址");
             }
-            // 选择第一个服务节点
-            ServiceMetaInfo selectedServiceMetaInfo = serviceMetaInfoList.get(0);
+
+            // 使用随机负载均衡器获取服务
+//            ServiceMetaInfo selectedServiceMetaInfo = serviceMetaInfoList.get(0);
+            ServiceMetaInfo selectedServiceMetaInfo = randomLoadBalancer.select(serviceMetaInfoList);
 
             //发送TCP请求（发送请求的操作封装在VertxTcpClient.doRequest）
             RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selectedServiceMetaInfo);
